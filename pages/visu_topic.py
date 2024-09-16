@@ -34,7 +34,7 @@ def plot_daily_success_rate(df):
     sns.set(style="whitegrid")
 
     # Création du graphique
-    fig, ax = plt.subplots(figsize=(10, 6))
+    fig, ax = plt.subplots(figsize=(5, 3))
     sns.lineplot(x=daily_success_rate.index, y=daily_success_rate['success'], ax=ax, color='royalblue', marker='o', linewidth=2.5)
     ax.set_xlabel('Date', fontsize=12)
     ax.set_ylabel('% de Prédictions Correctes', fontsize=12)
@@ -53,7 +53,7 @@ def plot_topic_success_rate(df):
     success_by_topic = df.groupby('real_topic').agg({'success': 'mean'}) * 100
 
     # Création du graphique avec Seaborn pour l'esthétique
-    fig, ax = plt.subplots(figsize=(10, 6))
+    fig, ax = plt.subplots(figsize=(5, 3))
     sns.barplot(x=success_by_topic.index, y=success_by_topic['success'], ax=ax, palette='Set2')
 
     ax.set_xlabel('Topic', fontsize=12)
