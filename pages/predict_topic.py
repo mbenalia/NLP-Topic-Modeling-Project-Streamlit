@@ -79,6 +79,7 @@ def make_prediction():
         prediction = response.json()
         topics = prediction.get("topic_distribution", [])
 
+        # Afficher les données pour débogage
 
         if topics:
             # Convertir les données en DataFrame
